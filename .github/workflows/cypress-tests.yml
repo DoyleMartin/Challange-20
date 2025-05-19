@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Setup Node.js
@@ -20,14 +20,6 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-
-      - name: Start server
-        run: npm run start &
-        env:
-          NODE_ENV: test
-
-      - name: Wait for server to be ready
-        run: npx wait-on http://localhost:3000
 
       - name: Run Cypress component tests
         run: npx cypress run --component
