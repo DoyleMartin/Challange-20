@@ -3,10 +3,11 @@ name: Run Cypress Component Tests
 on:
   pull_request:
     branches:
-      - develop
+      - Develop
 
 jobs:
   cypress:
+    name: Run Cypress Component Tests
     runs-on: ubuntu-latest
 
     steps:
